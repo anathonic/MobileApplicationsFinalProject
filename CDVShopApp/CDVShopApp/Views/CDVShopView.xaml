@@ -32,7 +32,7 @@
                 Grid.Row="1"
                 ItemsSource="{Binding Products}"
                 ItemTemplate="{StaticResource CDVShopProductsTemplate}"
-                Margin="12,0">
+                Margin="25,0">
                 <CollectionView.ItemsLayout>
                     <GridItemsLayout
                         Orientation="Vertical"

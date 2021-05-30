@@ -7,8 +7,12 @@ namespace CDVShopApp.Views.Templates
 
     public partial class CDVShopProductsTemplate : ContentView
     {
+
         public CDVShopProductsTemplate()
         {
+
+
+
             InitializeComponent();
         }
     }
