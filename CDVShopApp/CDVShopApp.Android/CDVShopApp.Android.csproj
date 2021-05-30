@@ -98,7 +98,9 @@
     <AndroidResource Include="Resources\mipmap-xxxhdpi\icon.png" />
     <AndroidResource Include="Resources\mipmap-xxxhdpi\launcher_foreground.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <AndroidResource Include="Resources\drawable\longsleeve.png" />
+  </ItemGroup>
   <ItemGroup>
     <ProjectReference Include="..\CDVShopApp\CDVShopApp.csproj">
       <Project>{25BD2B54-B945-4DF9-A52D-DBB7BF51E468}</Project>
@@ -106,22 +108,19 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\cap.jpg" />
+    <AndroidResource Include="Resources\drawable\polotshirt.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\hoodie.jpg" />
+    <AndroidResource Include="Resources\drawable\tshirt.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\longsleeve.jpg" />
+    <AndroidResource Include="Resources\drawable\cap.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\pololongsleeve.jpg" />
+    <AndroidResource Include="Resources\drawable\hoodie.png" />
   </ItemGroup>
   <ItemGroup>
-    <AndroidResource Include="Resources\drawable\polotshirt.jpg" />
-  </ItemGroup>
-  <ItemGroup>
-    <AndroidResource Include="Resources\drawable\tshirt.jpg" />
+    <AndroidResource Include="Resources\drawable\pololongsleeve.png" />
   </ItemGroup>
   <Import Project="$(MSBuildExtensionsPath)\Xamarin\Android\Xamarin.Android.CSharp.targets" />
 </Project>

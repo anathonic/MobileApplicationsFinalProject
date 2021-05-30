@@ -137,21 +137,21 @@
     </ProjectReference>
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\cap.jpg" />
+    <BundleResource Include="Resources\longsleeve.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\hoodie.jpg" />
+    <BundleResource Include="Resources\polotshirt.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\longsleeve.jpg" />
+    <BundleResource Include="Resources\tshirt.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\pololongsleeve.jpg" />
+    <BundleResource Include="Resources\cap.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\polotshirt.jpg" />
+    <BundleResource Include="Resources\hoodie.png" />
   </ItemGroup>
   <ItemGroup>
-    <BundleResource Include="Resources\tshirt.jpg" />
+    <BundleResource Include="Resources\pololongsleeve.png" />
   </ItemGroup>
 </Project>
