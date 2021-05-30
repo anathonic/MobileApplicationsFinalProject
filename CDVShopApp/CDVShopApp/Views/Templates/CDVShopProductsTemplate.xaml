@@ -1,0 +1,34 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="CDVShopApp.Views.Templates.CDVShopProductsTemplate">
+    <ContentView.Content>
+        <Grid
+            BackgroundColor="{StaticResource WhiteColor}">
+            <Grid
+                Margin="12, 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="Auto"/>
+                    <RowDefinition Height="Auto"/>
+                </Grid.RowDefinitions>
+                <pancakeview:PancakeView
+                    Grid.Row="0"
+                    CornerRadius="12"
+                    Frame.HasShadow="True">
+                    <Image
+                        Grid.Row="0"
+                        Aspect="AspectFill"
+                        Source="{Binding Image}"/>
+                </pancakeview:PancakeView>
+                <Label
+                    Grid.Row="1"
+                    Text="{Binding Price}" TextColor="{StaticResource BlackColor}"/>
+                    <Label
+                    Grid.Row="2"
+                    Text="{Binding Name}" TextColor="{StaticResource BlackColor}"/>
+            </Grid>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
