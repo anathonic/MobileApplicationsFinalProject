@@ -154,4 +154,22 @@
   <ItemGroup>
     <BundleResource Include="Resources\pololongsleeve.png" />
   </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\polotshirt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\tshirt.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\cap.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\hoodie.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\longsleeve.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <BundleResource Include="Resources\pololongsleeve.jpg" />
+  </ItemGroup>
 </Project>

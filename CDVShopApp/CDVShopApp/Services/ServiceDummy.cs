@@ -18,12 +18,12 @@ namespace CDVShopApp.Services
         {
             return new List<Product>
             {
-                new Product {Name="Bluza CDV", Image="hoodie.png", Price= 80, Description =""},
-                new Product {Name="T-shirt CDV", Image="tshirt.png", Price= 40, Description =""},
-                new Product {Name="Czapka CDV", Image="cap.png", Price= 30, Description =""},
-                new Product {Name="Longsleeve CDV", Image="longsleeve.png", Price= 50, Description =""},
-                new Product {Name="Polo T-shirt CDV", Image="polotshirt.png", Price= 50, Description =""},
-                new Product {Name="Polo Longsleeve CDV", Image="pololongsleeve.png", Price= 50, Description =""}
+                new Product {Name="Bluza CDV", Image="hoodie.jpg", Price= 80, Description =""},
+                new Product {Name="T-shirt CDV", Image="tshirt.jpg", Price= 40, Description =""},
+                new Product {Name="Czapka CDV", Image="cap.jpg", Price= 30, Description =""},
+                new Product {Name="Longsleeve CDV", Image="longsleeve.jpg", Price= 50, Description =""},
+                new Product {Name="Polo T-shirt CDV", Image="polotshirt.jpg", Price= 50, Description =""},
+                new Product {Name="Polo Longsleeve CDV", Image="pololongsleeve.jpg", Price= 50, Description =""}
             };
 
         }
