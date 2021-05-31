@@ -6,4 +6,7 @@
     <Color x:Key="BlackColor">#000000</Color>
     <Color x:Key="SecondaryTextColor">#8E8F93</Color>
     <Color x:Key="GreyColor">#E0E0E0</Color>
+    <Color x:Key="YellowColor">#ffc500</Color>
+    <Color x:Key="BlueColor">#0498b4</Color>
+    <Color x:Key="NavyColor">#003e5d</Color>
 </ResourceDictionary>
