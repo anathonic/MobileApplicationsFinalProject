@@ -27,7 +27,7 @@
         </ContentView.Resources>
         <ContentView.Content>
         <Grid
-            BackgroundColor="{StaticResource WhiteColor}"
+            BackgroundColor="{StaticResource GreyColor}"
             HeightRequest="250">
             <Grid
                 Margin="12, 0">
@@ -36,14 +36,16 @@
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
-                <pancakeview:PancakeView
+                <pancakeview:PancakeView>
+                    <Frame Padding="0" CornerRadius="12"
+                    IsClippedToBounds="True"
                     Grid.Row="0"
-                    CornerRadius="12"
-                    Frame.HasShadow="True">
-                    <Image 
+                    HasShadow="True">
+                    <Image
                         Grid.Row="0"
                         Aspect="AspectFill"
                         Source="{Binding Image}"/>
+                    </Frame>
                 </pancakeview:PancakeView>
                 <Label
                     Grid.Row="1"
