@@ -2,7 +2,9 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:templates="clr-namespace:CDVShopApp.Views.Templates"
+             xmlns:views="clr-namespace:CDVShopApp.Views"
              x:Class="CDVShopApp.Views.CDVShopView"
+             x:Name="CDVShopPage"
             BackgroundColor="{StaticResource WhiteColor}">
     <ContentPage.Resources>
         <ResourceDictionary>
@@ -21,25 +23,28 @@
     </ContentPage.Resources>
     <ContentPage.Content>
         <Grid>
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="*" />
-            </Grid.RowDefinitions>
-            <Label
-                Grid.Row="0"
-                Text="Produkty"
-                Style="{StaticResource TitleStyle}"/>
-            <CollectionView
-                Grid.Row="1"
-                ItemsSource="{Binding Products}"
-                ItemTemplate="{StaticResource CDVShopProductsTemplate}"
-                Margin="25,0">
-                <CollectionView.ItemsLayout>
-                    <GridItemsLayout
-                        Orientation="Vertical"
-                        Span="2"/>
-                </CollectionView.ItemsLayout>
-            </CollectionView>
+            <!--main content-->
+            <Grid>
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="*" />
+                    <RowDefinition Height="70" />
+                </Grid.RowDefinitions>
+                <!--header-->
+                <Label Grid.Row="0" Text="Produkty" Style="{StaticResource TitleStyle}"/>
+                <!--products-->
+                <CollectionView
+                    Grid.Row="1"
+                    ItemsSource="{Binding Products}"
+                    ItemTemplate="{StaticResource CDVShopProductsTemplate}"
+                    Margin="25,0">
+                    <CollectionView.ItemsLayout>
+                        <GridItemsLayout Orientation="Vertical" Span="2"/>
+                    </CollectionView.ItemsLayout>
+                </CollectionView>
+            </Grid>
+            <!--cart pop up-->
+            <views:CartView x:Name="CartView"/>
         </Grid>
     </ContentPage.Content>
 </ContentPage>

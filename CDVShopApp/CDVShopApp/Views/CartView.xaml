@@ -1,0 +1,61 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<ContentView xmlns="http://xamarin.com/schemas/2014/forms" 
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
+             x:Class="CDVShopApp.Views.CartView">
+    <ContentView.Resources>
+        <ResourceDictionary>
+            <Style x:Key="CartTitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSize30}" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="18, 0, 0, 0" />
+            </Style>
+            
+            <Style x:Key="ArrowTextStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSize30}" />
+                <Setter Property="TextColor" Value="{StaticResource YellowColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="VerticalOptions" Value="Center" />
+            </Style>
+        </ResourceDictionary>
+    </ContentView.Resources>
+    <ContentView.Content>
+        <Grid
+            RowSpacing="0">
+            <Grid.RowDefinitions>
+                <RowDefinition Height="70"/>
+                <RowDefinition Height="*"/>
+            </Grid.RowDefinitions>
+            <pancakeview:PancakeView
+                BackgroundColor="{StaticResource YellowColor}"
+                CornerRadius="24, 24, 0, 0"
+                VerticalOptions="Start">
+                <Grid>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="Auto" />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="Auto"/>
+                    </Grid.ColumnDefinitions>
+                    <Label Grid.Column="0" Text="Koszyk" Style ="{StaticResource CartTitleStyle}"/>
+                    <CollectionView
+                       Grid.Column="1"/>
+                    <Grid
+                        Grid.Column="2">
+                        <!--expand button-->
+                        <pancakeview:PancakeView
+                            x:Name="ExpandButton"
+                            CornerRadius="24, 24, 0, 0"
+                            BackgroundColor="{StaticResource YellowColor}"
+                            WidthRequest="36"
+                            Margin="0, 18, 36, 0">
+                            <Label Text="|" Style="{StaticResource ArrowTextStyle}"/>
+                            <!--collapse button-->
+                        </pancakeview:PancakeView>
+                    </Grid>
+                </Grid>
+            </pancakeview:PancakeView>
+        </Grid>
+    </ContentView.Content>
+</ContentView>
