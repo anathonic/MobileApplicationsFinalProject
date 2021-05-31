@@ -4,5 +4,6 @@
              x:Class="CDVShopApp.Styles.Fonts">
 
     <x:Double x:Key="FontSize30">30</x:Double>
+    <x:Double x:Key="FontSize48">48</x:Double>
      
 </ResourceDictionary>

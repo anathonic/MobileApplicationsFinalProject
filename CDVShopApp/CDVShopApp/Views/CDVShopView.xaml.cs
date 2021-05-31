@@ -5,6 +5,7 @@ namespace CDVShopApp.Views
 {
     public partial class CDVShopView : ContentPage
     {
+        const uint AnimationDuration = 500;
         double _pageHeight;
         public CDVShopView()
         {
@@ -15,6 +16,8 @@ namespace CDVShopApp.Views
         protected override void OnAppearing()
         {
             base.OnAppearing();
+            CartView.OnExpand += OnExpand;
+            CartView.OnCollapse += OnCollapse;
         }
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -25,6 +28,18 @@ namespace CDVShopApp.Views
         protected override void OnDisappearing()
         {
             base.OnDisappearing();
+            CartView.OnExpand -= OnExpand;
+            CartView.OnCollapse -= OnCollapse;
+        }
+
+        private void OnExpand()
+        {
+            var height = _pageHeight - CartView.PageHeader;
+            CartView.TranslateTo(0, Height - height, AnimationDuration, Easing.SinInOut );
+        }
+        private void OnCollapse()
+        {
+            CartView.TranslateTo(0, _pageHeight - CartView.PageHeader, AnimationDuration, Easing.SinInOut);
         }
     }
 }
