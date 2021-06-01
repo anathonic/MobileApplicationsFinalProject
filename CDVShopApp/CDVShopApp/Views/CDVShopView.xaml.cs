@@ -15,9 +15,10 @@ namespace CDVShopApp.Views
         }
         protected override void OnAppearing()
         {
-            base.OnAppearing();
+           
             CartView.OnExpand += OnExpand;
             CartView.OnCollapse += OnCollapse;
+            base.OnAppearing();
         }
         protected override void OnSizeAllocated(double width, double height)
         {
@@ -27,9 +28,10 @@ namespace CDVShopApp.Views
         }
         protected override void OnDisappearing()
         {
-            base.OnDisappearing();
+            
             CartView.OnExpand -= OnExpand;
             CartView.OnCollapse -= OnCollapse;
+            base.OnDisappearing();
         }
 
         private void OnExpand()

@@ -10,6 +10,7 @@ namespace CDVShopApp.Views
         public CartView()
         {
             InitializeComponent();
+            GoToState("Collapsed");
         }
         public int PageHeader { get; private set; } = 70;
 
@@ -19,12 +20,12 @@ namespace CDVShopApp.Views
 
         private void OnExpandTapped(object sender, System.EventArgs e)
         {
-            VisualStateManager.GoToState(ExpandButton, "Expanded");
+            GoToState("Expanded");
             OnExpand?.Invoke();
         }
         private void OnCollapseTapped(object sender, System.EventArgs e)
         {
-            VisualStateManager.GoToState(ExpandButton, "Collapsed");
+            GoToState( "Collapsed");
             OnCollapse?.Invoke();
         }
         private void GoToState(string visualState)
