@@ -1,5 +1,5 @@
 # Mobile Applications Final Project
-##### Platforms: #####
+### Platforms: ###
 ***
 * Android
 * iOS
