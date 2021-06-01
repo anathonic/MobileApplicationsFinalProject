@@ -8,6 +8,7 @@ namespace CDVShopApp.ViewModels
     public class CDVShopViewModel : BindableObject
     {
         private ObservableCollection<Product> _products;
+        public ObservableCollection<BasketItem> _basket;
 
         public CDVShopViewModel()
         {
@@ -23,9 +24,19 @@ namespace CDVShopApp.ViewModels
                 OnPropertyChanged();
             }
         }
-    private void LoadData()
+        public ObservableCollection<BasketItem> Basket
+        {
+            get { return _basket; }
+            set
+            {
+                _basket = value;
+                OnPropertyChanged();
+            }
+        }
+        private void LoadData()
         {
             Products = new ObservableCollection<Product>(ServiceDummy.Instance.GetProducts());
+            Basket = new ObservableCollection<BasketItem>(BasketService.Instance.GetActualBasket());
         }
     }
 }
