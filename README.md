@@ -1,1 +1,4 @@
-# -Mobile-Applications-Final-Project
+# Mobile Applications Final Project
+###### Platforms: ######
+-Android
+-iOS
