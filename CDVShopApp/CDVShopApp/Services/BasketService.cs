@@ -20,9 +20,9 @@ namespace CDVShopApp.Services
         {
             return new List<BasketItem>
             {
-                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Bluza CDV", ProductImage ="hoodie.jpg", Quantity = 1, unitPrice = 80},
-                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Longsleeve CDV", ProductImage ="longsleeve.jpg", Quantity = 1, unitPrice = 50},
-                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Czapka CDV", ProductImage ="cap.jpg", Quantity = 1, unitPrice = 30},
+                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Bluza CDV", ProductImage ="hoodie.jpg", Quantity = 1, UnitPrice = 80},
+                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Longsleeve CDV", ProductImage ="longsleeve.jpg", Quantity = 1, UnitPrice = 50},
+                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Czapka CDV", ProductImage ="cap.jpg", Quantity = 1, UnitPrice = 30},
             };
  
         }
