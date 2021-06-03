@@ -15,10 +15,14 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                     <Setter Property="Margin" Value="18, 24, 0, 12" />
             </Style>
+            <Style x:Key="NotificationButtonStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+            </Style>
             <DataTemplate x:Key="CDVShopProductsTemplate">
-            <templates:CDVShopProductsTemplate/>
+                <templates:CDVShopProductsTemplate/>
             </DataTemplate>
-            
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -31,7 +35,12 @@
                     <RowDefinition Height="70" />
                 </Grid.RowDefinitions>
                 <!--header-->
-                <Label Grid.Row="0" Text="Produkty" Style="{StaticResource TitleStyle}"/>
+                <Label Grid.Row="0" Text="Bądź z nami na bieżąco!" Margin="15,20,0,0" Style="{StaticResource TitleStyle}"/>
+                <!--notification button-->
+                <Button Grid.Row="0" Margin="15,70,15,50" Text="Włącz powiadomienia o nowych produktach"
+                        Style="{StaticResource NotificationButtonStyle}"/>
+                <!--header-->
+                <Label Grid.Row="0" Text="Produkty" Margin="15,120,0,0" Style="{StaticResource TitleStyle}"/>
                 <!--products-->
                 <CollectionView
                     Grid.Row="1"

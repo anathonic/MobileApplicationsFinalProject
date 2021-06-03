@@ -25,7 +25,21 @@
             <DataTemplate x:Key="CollapsedBasketItemTemplate">
                 <templates:CollapsedBasketItemTemplate />
             </DataTemplate>
-            
+            <DataTemplate x:Key="ProductBasketItemTemplate">
+                <ViewCell>
+                    <templates:ExpandedBasketItemTemplate/>
+                </ViewCell>
+            </DataTemplate>
+            <DataTemplate x:Key="CollectionBasketItemTemplate">
+                <ViewCell>
+                    <templates:BasketCollectionItemTemplate/>
+                </ViewCell>
+            </DataTemplate>
+
+            <templates:BasketItemDataTemplateSelector
+                x:Key="BasketItemTemplateSelector"
+                OrderTemplate="{StaticResource CollectionBasketItemTemplate}"
+                ProductTemplate="{StaticResource ProductBasketItemTemplate}"/>
         </ResourceDictionary>
     </ContentView.Resources>
     <ContentView.Content>
@@ -47,15 +61,6 @@
                     </Grid.ColumnDefinitions>
                     <Label Grid.Column="0" Text="Koszyk" Style ="{StaticResource CartTitleStyle}"/>
                     <!--summary basket items -->
-                    <CollectionView
-                        x:Name="BasketSummary"
-                        Grid.Column="1"
-                        ItemsSource="{Binding Basket}"
-                        ItemTemplate="{StaticResource CollapsedBasketItemTemplate}"></CollectionView>
-                    <CollectionView.ItemsLayout>
-                            <GridItemsLayout
-                                Orientation="Horizontal"/>
-                     </CollectionView.ItemsLayout>
                         <Grid
                         Grid.Column="2">
                         <!--expand button-->
@@ -122,13 +127,14 @@
                 Grid.Row="1"
             BackgroundColor="{StaticResource YellowColor}">
                 <Grid.RowDefinitions>
+                    <RowDefinition Height="*"/>
+                    <RowDefinition Height="Auto"/>
                     <RowDefinition Height="250"/>
-                    <RowDefinition Height="Auto"/>
-                    <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
                 <ListView
                     Grid.Row="0"
                     ItemsSource="{Binding Basket}"
+                    ItemTemplate="{StaticResource BasketItemTemplateSelector}"
                     SeparatorVisibility="None"
                     SelectedItem="None"/>
             </Grid>
