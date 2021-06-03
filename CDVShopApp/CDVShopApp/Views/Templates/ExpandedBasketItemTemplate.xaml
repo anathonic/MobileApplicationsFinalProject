@@ -6,8 +6,8 @@
         <ResourceDictionary>
 
             <Style x:Key="ProductImageStyle" TargetType="Image">
-                <Setter Property="WidthRequest" Value="50"/>
-                <Setter Property="HeightRequest" Value="100"/>
+                <Setter Property="WidthRequest" Value="70"/>
+                <Setter Property="HeightRequest" Value="70"/>
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="Margin" Value="12,0"/>
             </Style>
@@ -15,19 +15,22 @@
                 <Setter Property="VerticalOptions" Value="Center" />
                 <Setter Property="FontSize" Value="15"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Margin" Value="6,0"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Margin" Value="0,0"/>
             </Style>
             <Style x:Key="ProductNameStyle" TargetType="Label">
             <Setter Property="VerticalOptions" Value="Center" />
             <Setter Property="FontSize" Value="20"/>
             <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="Margin" Value="6,0"/>
+            <Setter Property="TextColor" Value="Black"/>
+            <Setter Property="Margin" Value="5,0"/>
             </Style>
             <Style x:Key="ProductPriceStyle" TargetType="Label">
                 <Setter Property="HorizontalTextAlignment" Value="End"/>
                 <Setter Property="FontSize" Value="20"/>
                 <Setter Property="FontAttributes" Value="Bold"/>
-                <Setter Property="Margin" Value="6,5,20,0"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Margin" Value="5,20,20,0"/>
             </Style>
 
         </ResourceDictionary>

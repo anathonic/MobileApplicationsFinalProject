@@ -15,8 +15,14 @@
                 <Setter Property="FontAttributes" Value="Bold" />
                     <Setter Property="Margin" Value="18, 24, 0, 12" />
             </Style>
+            <Style x:Key="STitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSize30}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="18, 24, 0, 12" />
+            </Style>
             <Style x:Key="NotificationButtonStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="15" />
+                <Setter Property="FontSize" Value="20" />
                 <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
                 <Setter Property="FontAttributes" Value="Bold" />
             </Style>
@@ -35,12 +41,20 @@
                     <RowDefinition Height="70" />
                 </Grid.RowDefinitions>
                 <!--header-->
-                <Label Grid.Row="0" Text="Bądź z nami na bieżąco!" Margin="15,20,0,0" Style="{StaticResource TitleStyle}"/>
-                <!--notification button-->
-                <Button Grid.Row="0" Margin="15,70,15,50" Text="Włącz powiadomienia o nowych produktach"
+                <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True" Grid.Row="0" HasShadow="True" Margin="10,20,10,40">
+                    <Grid BackgroundColor="{StaticResource NavyColor}" HeightRequest="130">
+                        <Grid>
+                            <Label Grid.Row="0" Text="Bądź z nami na bieżąco!" Margin="10,20,0,0" Style="{StaticResource STitleStyle}"/>
+                            <!--notification button-->
+                            <Button Grid.Row="0" Margin="15,80,15,40" Text="Włącz powiadomienia" BorderRadius="35" BorderWidth="5"
+                                    BorderColor="Black"
+                            BackgroundColor="White"
                         Style="{StaticResource NotificationButtonStyle}"/>
+                        </Grid>
+                    </Grid>
+                </Frame>
                 <!--header-->
-                <Label Grid.Row="0" Text="Produkty" Margin="15,120,0,0" Style="{StaticResource TitleStyle}"/>
+                <Label Grid.Row="0" Text="Produkty" Margin="15,200,0,0" Style="{StaticResource TitleStyle}"/>
                 <!--products-->
                 <CollectionView
                     Grid.Row="1"

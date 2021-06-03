@@ -135,6 +135,7 @@
                     Grid.Row="0"
                     ItemsSource="{Binding Basket}"
                     ItemTemplate="{StaticResource BasketItemTemplateSelector}"
+                    HasUnevenRows="True"
                     SeparatorVisibility="None"
                     SelectedItem="None"/>
             </Grid>
