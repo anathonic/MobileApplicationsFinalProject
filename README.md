@@ -2,7 +2,7 @@
 
 ## Collegium Da Vinci Mobile Shop Application ##
 
-Shop Application with Azure App Service
+Shop Application with Azure App Service 
 
 ### Platforms: ###
 ***
