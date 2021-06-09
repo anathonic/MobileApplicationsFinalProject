@@ -39,7 +39,7 @@
                 <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True" Grid.Row="0" HasShadow="True" Margin="10,20,10,40">
                     <Grid BackgroundColor="{StaticResource YellowColor}" HeightRequest="130">
                         <Grid>
-                            <Label Grid.Row="0" Text="Bądź z nami na bieżąco!" Margin="10,20,0,0" Style="{StaticResource TitleStyle}"/>
+                            <Label Grid.Row="0" Text="Bądź z nami na bieżąco!" Margin="32,20,0,0" Style="{StaticResource TitleStyle}"/>
                             <!--notification button-->
                             <Button Grid.Row="0" Margin="15,80,15,40" Text="Włącz powiadomienia" BorderRadius="35" BorderWidth="5"
                                     BorderColor="{StaticResource YellowColor}"
