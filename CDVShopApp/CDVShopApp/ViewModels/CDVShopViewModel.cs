@@ -3,11 +3,13 @@ using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using CDVShopApp.Services;
 using System.Linq;
+using System.Windows.Input;
 
 namespace CDVShopApp.ViewModels
 {
     public class CDVShopViewModel : BindableObject
     {
+        private Product _selectedProduct;
         private ObservableCollection<Product> _products;
         public ObservableCollection<BasketItem> _basket;
         public decimal _total;
@@ -16,6 +18,19 @@ namespace CDVShopApp.ViewModels
         {
             LoadData();
         }
+
+        public Product SelectedProduct
+        {
+            get { return _selectedProduct; }
+            set
+            {
+                _selectedProduct = value;
+                OnPropertyChanged();
+            }
+        }
+
+
+
 
         public ObservableCollection<Product> Products
         {
@@ -35,6 +50,9 @@ namespace CDVShopApp.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public ICommand DetailCommand => new Command(NavigateToCDVShopDetail);
+
             public decimal Total
         {
             get { return _total; }
@@ -50,6 +68,11 @@ namespace CDVShopApp.ViewModels
             var actualBasket = BasketService.Instance.GetActualBasket();
             Basket = new ObservableCollection<BasketItem>(BasketService.Instance.GetActualBasket());
             Total = actualBasket.Sum(b => b.UnitPrice * b.Quantity);
+        }
+
+        private void NavigateToCDVShopDetail()
+        {
+           
         }
 
     }
