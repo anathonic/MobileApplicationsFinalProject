@@ -2,6 +2,7 @@
 using System.Collections.ObjectModel;
 using Xamarin.Forms;
 using CDVShopApp.Services;
+using System.Linq;
 
 namespace CDVShopApp.ViewModels
 {
@@ -9,6 +10,7 @@ namespace CDVShopApp.ViewModels
     {
         private ObservableCollection<Product> _products;
         public ObservableCollection<BasketItem> _basket;
+        public decimal _total;
 
         public CDVShopViewModel()
         {
@@ -33,10 +35,22 @@ namespace CDVShopApp.ViewModels
                 OnPropertyChanged();
             }
         }
+            public decimal Total
+        {
+            get { return _total; }
+            set
+            {
+                _total = value;
+                OnPropertyChanged();
+            }
+        }
         private void LoadData()
         {
             Products = new ObservableCollection<Product>(ServiceDummy.Instance.GetProducts());
+            var actualBasket = BasketService.Instance.GetActualBasket();
             Basket = new ObservableCollection<BasketItem>(BasketService.Instance.GetActualBasket());
+            Total = actualBasket.Sum(b => b.UnitPrice * b.Quantity);
         }
+
     }
 }

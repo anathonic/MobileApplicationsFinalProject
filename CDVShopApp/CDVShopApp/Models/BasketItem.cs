@@ -12,6 +12,7 @@ namespace CDVShopApp.Models
         public string ProductImage { get; set; }
         public decimal UnitPrice { get; set; }
         public BasketItemType BasketItemType { get; set; }
+        public decimal Total { get { return Quantity * UnitPrice; } }
 
     }
 }

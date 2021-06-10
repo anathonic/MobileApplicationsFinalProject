@@ -147,11 +147,11 @@
                     </Grid.ColumnDefinitions>
                     <Label 
                         Grid.Column="0"
-                        Text="Total:"
+                        Text="Suma:"
                         Style="{StaticResource CartTitleStyle}"/>
                     <Label 
                         Grid.Column="1"
-                        Text="{Binding Total, StringFormat='{0:C0}'}"
+                        Text="{Binding Total, StringFormat='{0:N2} PLN'}"
                         Style="{StaticResource CartTitleStyle}"/>
                 </Grid>
                 <!-- BUY NOW BUTTON -->
@@ -169,7 +169,7 @@
                         </Grid.ColumnDefinitions>
                         <Label 
                             Grid.Column="1"
-                            Text="Buy now"
+                            Text="Zamów"
                             Style="{StaticResource CartTitleStyle}"/>
                     </Grid>
                 </pancakeview:PancakeView>
