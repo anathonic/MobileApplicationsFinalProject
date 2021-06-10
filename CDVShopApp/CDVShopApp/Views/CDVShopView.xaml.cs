@@ -5,7 +5,8 @@ namespace CDVShopApp.Views
 {
     public partial class CDVShopView : ContentPage
     {
-        const uint AnimationDuration = 500;
+        const uint ExpandAnimationDuration = 500;
+        const uint CollapsedAnimationDuration = 250;
         double _pageHeight;
         public CDVShopView()
         {
@@ -37,11 +38,11 @@ namespace CDVShopApp.Views
         private void OnExpand()
         {
             var height = _pageHeight - CartView.PageHeader;
-            CartView.TranslateTo(0, Height - height, AnimationDuration, Easing.SinInOut );
+            CartView.TranslateTo(0, Height - height, ExpandAnimationDuration, Easing.SinInOut );
         }
         private void OnCollapse()
         {
-            CartView.TranslateTo(0, _pageHeight - CartView.PageHeader, AnimationDuration, Easing.SinInOut);
+            CartView.TranslateTo(0, _pageHeight - CartView.PageHeader, CollapsedAnimationDuration, Easing.SinInOut);
         }
     }
 }

@@ -150,10 +150,6 @@
                         Text="Total:"
                         Style="{StaticResource CartTitleStyle}"/>
                     <Label 
-                        Grid.Column="0"
-                        Text="Total:"
-                        Style="{StaticResource CartTitleStyle}"/>
-                    <Label 
                         Grid.Column="1"
                         Text="{Binding Total, StringFormat='{0:C0}'}"
                         Style="{StaticResource CartTitleStyle}"/>
