@@ -1,6 +1,4 @@
-﻿
-using Xamarin.Forms;
-
+﻿using Xamarin.Forms;
 
 namespace CDVShopApp.Views
 {
@@ -9,6 +7,7 @@ namespace CDVShopApp.Views
         public CDVShopDetailView()
         {
             InitializeComponent();
+
         }
     }
 }

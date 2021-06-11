@@ -55,8 +55,9 @@
                     Grid.Row="1"
                     ItemsSource="{Binding Products}"
                     ItemTemplate="{StaticResource CDVShopProductsTemplate}"
+                    SelectionMode="Single"
                     SelectedItem="{Binding SelectedProduct, Mode=TwoWay}"
-                    SelectionChangedCommand="{Binding DetailCommand}"
+                    SelectionChangedCommand="{Binding SelectCommand}" 
                     Margin="25,0">
                     <CollectionView.ItemsLayout>
                         <GridItemsLayout Orientation="Vertical" Span="2"/>

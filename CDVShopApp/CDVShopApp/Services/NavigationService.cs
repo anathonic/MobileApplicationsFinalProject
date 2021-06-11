@@ -4,6 +4,7 @@ using System;
 using System.Collections.Generic;
 using System.Threading.Tasks;
 using Xamarin.Forms;
+
 namespace CDVShopApp.Services
 {
     public class NavigationService
@@ -97,7 +98,7 @@ namespace CDVShopApp.Services
         void CreatePageViewModelMappings()
         {
             mappings.Add(typeof(CDVShopViewModel), typeof(CDVShopView));
-            mappings.Add(typeof(CDVShopViewModel), typeof(CDVShopView));
+            mappings.Add(typeof(DetailViewModel), typeof(CDVShopDetailView));
         }
     }
 }

@@ -9,14 +9,25 @@ namespace CDVShopApp.ViewModels
 {
     public class CDVShopViewModel : ViewModelBase
     {
-        private Product _selectedProduct;
         private ObservableCollection<Product> _products;
+        private Product _selectedProduct;
         public ObservableCollection<BasketItem> _basket;
         public decimal _total;
 
         public CDVShopViewModel()
         {
             LoadData();
+        }
+
+
+        public ObservableCollection<Product> Products
+        {
+            get { return _products; }
+            set
+            {
+                _products = value;
+                OnPropertyChanged();
+            }
         }
 
         public Product SelectedProduct
@@ -30,17 +41,6 @@ namespace CDVShopApp.ViewModels
         }
 
 
-
-
-        public ObservableCollection<Product> Products
-        {
-            get { return _products; }
-            set
-            {
-                _products = value;
-                OnPropertyChanged();
-            }
-        }
         public ObservableCollection<BasketItem> Basket
         {
             get { return _basket; }
@@ -51,8 +51,6 @@ namespace CDVShopApp.ViewModels
             }
         }
 
-        public ICommand DetailCommand => new Command(NavigateToCDVShopDetail);
-
             public decimal Total
         {
             get { return _total; }
@@ -62,17 +60,19 @@ namespace CDVShopApp.ViewModels
                 OnPropertyChanged();
             }
         }
+
+        public ICommand SelectCommand => new Command(NavigateToCDVShopDetail);
         private void LoadData()
         {
             Products = new ObservableCollection<Product>(ServiceDummy.Instance.GetProducts());
             var actualBasket = BasketService.Instance.GetActualBasket();
-            Basket = new ObservableCollection<BasketItem>(BasketService.Instance.GetActualBasket());
+            Basket = new ObservableCollection<BasketItem>(actualBasket);
             Total = actualBasket.Sum(b => b.UnitPrice * b.Quantity);
         }
 
         private void NavigateToCDVShopDetail()
         {
-            NavigationService.Instance.NavigateToAsync<CDVShopViewModel>(SelectedProduct);
+            NavigationService.Instance.NavigateToAsync<DetailViewModel>(SelectedProduct);
         }
 
     }
