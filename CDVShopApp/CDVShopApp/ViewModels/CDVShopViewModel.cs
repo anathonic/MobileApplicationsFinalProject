@@ -1,13 +1,13 @@
 ﻿using CDVShopApp.Models;
-using System.Collections.ObjectModel;
-using Xamarin.Forms;
 using CDVShopApp.Services;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Windows.Input;
+using Xamarin.Forms;
 
 namespace CDVShopApp.ViewModels
 {
-    public class CDVShopViewModel : BindableObject
+    public class CDVShopViewModel : ViewModelBase
     {
         private Product _selectedProduct;
         private ObservableCollection<Product> _products;
@@ -72,7 +72,7 @@ namespace CDVShopApp.ViewModels
 
         private void NavigateToCDVShopDetail()
         {
-           
+            NavigationService.Instance.NavigateToAsync<CDVShopViewModel>(SelectedProduct);
         }
 
     }
