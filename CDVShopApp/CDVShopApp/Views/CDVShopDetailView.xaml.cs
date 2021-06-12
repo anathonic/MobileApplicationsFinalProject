@@ -7,6 +7,8 @@ namespace CDVShopApp.Views
         public CDVShopDetailView()
         {
             InitializeComponent();
+            NavigationPage.SetHasNavigationBar(this, false);
+            Parallax.ParallaxView = HeaderView;
 
         }
     }

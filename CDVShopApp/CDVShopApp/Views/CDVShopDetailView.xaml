@@ -5,6 +5,117 @@
              xmlns:pancakeview="clr-namespace:Xamarin.Forms.PancakeView;assembly=Xamarin.Forms.PancakeView"
              xmlns:controls="clr-namespace:CDVShopApp.Controls"
              x:Class="CDVShopApp.Views.CDVShopDetailView">
+    <ContentPage.Resources>
+        <ResourceDictionary>
 
-    <Label Text="Hello"/>
+            <Style x:Key="TitleStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSize30}" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="Margin" Value="18, 24, 0, 12" />
+            </Style>
+
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <Grid>
+            <Grid.RowDefinitions>
+                <RowDefinition Height="300" />
+                <RowDefinition Height="40" />
+                <RowDefinition Height="*" />
+            </Grid.RowDefinitions>
+            <forms:CachedImage
+          x:Name="HeaderView"
+          Grid.Row="0"
+          Grid.RowSpan="2"
+          Aspect="AspectFill"
+          Source="{Binding Product.Image}"/>
+            <controls:ParallaxControl
+          x:Name="Parallax"
+          Grid.Row="0"
+          Grid.RowSpan="3">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="300" />
+                        <RowDefinition />
+                    </Grid.RowDefinitions>
+                    <pancakeview:PancakeView
+              Grid.Row="1"
+              CornerRadius="24, 24, 0, 0"
+              BackgroundColor="White"
+              Margin="0, 20, 0, 0">
+                        <Grid>
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="*" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <!-- Product name -->
+                            <Label
+                  Grid.Row="0"
+                  Text="{Binding Product.Name}"
+                  Style="{StaticResource TitleStyle}"/>
+                            <!-- Quantity -->
+                            <Grid
+                  Grid.Row="1">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="Auto" />
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <Label
+                    Grid.Column="1"
+                    Text="{Binding Product.Price, StringFormat='{0:C0}'}"
+                    Style="{StaticResource TitleStyle}"/>
+                            </Grid>
+                            <!-- About -->
+                            <Label
+                  Grid.Row="2"
+                  Text="O produkcie"
+                  Style="{StaticResource TitleStyle}"/>
+                            <!-- Description -->
+                            <Label
+                  Grid.Row="3"
+                  Text="{Binding Product.Description}"
+                  Style="{StaticResource TitleStyle}"/>
+                            <Grid
+                  Grid.Row="4"
+                  Margin="0, 12">
+                                <Grid.ColumnDefinitions>
+                                    <ColumnDefinition Width="80"/>
+                                    <ColumnDefinition Width="*" />
+                                </Grid.ColumnDefinitions>
+                                
+                                <!-- add to cart button -->
+                                <pancakeview:PancakeView
+                    Grid.Column="1"
+                    HeightRequest="48"
+                    CornerRadius="24, 0, 24, 0"
+                    BackgroundColor="{StaticResource YellowColor}"
+                    Margin="24, 0, 0, 0">
+                                    <Grid>
+                                        <Grid.ColumnDefinitions>
+                                            <ColumnDefinition Width="30" />
+                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="Auto" />
+                                        </Grid.ColumnDefinitions>
+                                        <Label
+                        Grid.Column="1"
+                        Text="Dodaj do koszyka"
+                        Style="{StaticResource TitleStyle}"/>
+                                        <Label
+                        Grid.Column="2"
+                        Text=">"
+                        Style="{StaticResource TitleStyle}"/>
+                                    </Grid>
+                                </pancakeview:PancakeView>
+                            </Grid>
+                        </Grid>
+                    </pancakeview:PancakeView>
+                </Grid>
+            </controls:ParallaxControl>
+        </Grid>
+    </ContentPage.Content>
 </ContentPage>
