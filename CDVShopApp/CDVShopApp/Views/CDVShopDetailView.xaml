@@ -8,13 +8,6 @@
     <ContentPage.Resources>
         <ResourceDictionary>
 
-            <Style x:Key="TitleStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="{StaticResource FontSize30}" />
-                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
-                <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="Margin" Value="18, 24, 0, 12" />
-            </Style>
-
             <Style x:Key="ProductNameStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
                 <Setter Property="FontSize" Value="32" />
@@ -33,14 +26,15 @@
 
             <Style x:Key="ProductDescriptionTitleStyle" TargetType="Label">
                 <Setter Property="FontAttributes" Value="Bold" />
-                <Setter Property="FontSize" Value="14" />
+                <Setter Property="FontSize" Value="22" />
                 <Setter Property="TextColor" Value="Black" />
                 <Setter Property="Margin" Value="24, 12, 0, 0" />
             </Style>
 
             <Style x:Key="ProductDescriptionStyle" TargetType="Label">
-                <Setter Property="FontSize" Value="12" />
-                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="FontSize" Value="17" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
                 <Setter Property="Margin" Value="24, 12, 24, 0" />
             </Style>
 
@@ -92,6 +86,7 @@
                             <Label
                   Grid.Row="0"
                   Text="{Binding Product.Name}"
+                                
                   Style="{StaticResource ProductNameStyle}"/>
                             <!-- Quantity -->
                             <Grid
@@ -139,7 +134,7 @@
                                         </Grid.ColumnDefinitions>
                                         <Label
                         Grid.Column="1"
-                        Text="Dodaj"
+                        Text="Dodaj do koszyka"
                         Style="{StaticResource AddToCartStyle}"/>
                                         
                                     </Grid>
