@@ -1,5 +1,5 @@
-﻿using System;
-using CDVShopApp.Views;
+﻿using CDVShopApp.Services;
+using System.Threading.Tasks;
 using Xamarin.Forms;
 using Xamarin.Forms.Xaml;
 
@@ -12,7 +12,12 @@ namespace CDVShopApp
         {
             InitializeComponent();
 
-            MainPage = new CDVShopView();
+            InitNavigation();
+        }
+
+        Task InitNavigation()
+        {
+            return NavigationService.Instance.InitializeAsync();
         }
 
         protected override void OnStart()

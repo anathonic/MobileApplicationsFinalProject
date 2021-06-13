@@ -15,6 +15,41 @@
                 <Setter Property="Margin" Value="18, 24, 0, 12" />
             </Style>
 
+            <Style x:Key="ProductNameStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="32" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="24, 24, 0, 12" />
+            </Style>
+
+            <Style x:Key="ProductPriceStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="28" />
+                <Setter Property="TextColor" Value="{StaticResource BlackColor}" />
+                <Setter Property="HorizontalOptions" Value="End" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="48, 0" />
+            </Style>
+
+            <Style x:Key="ProductDescriptionTitleStyle" TargetType="Label">
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="TextColor" Value="Black" />
+                <Setter Property="Margin" Value="24, 12, 0, 0" />
+            </Style>
+
+            <Style x:Key="ProductDescriptionStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="12" />
+                <Setter Property="TextColor" Value="{StaticResource SecondaryTextColor}" />
+                <Setter Property="Margin" Value="24, 12, 24, 0" />
+            </Style>
+
+            <Style x:Key="AddToCartStyle" TargetType="Label">
+                <Setter Property="FontSize" Value="{StaticResource FontSize20}" />
+                <Setter Property="TextColor" Value="{StaticResource WhiteColor}" />
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="Margin" Value="24, 0" />
+            </Style>
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
@@ -29,6 +64,7 @@
           Grid.Row="0"
           Grid.RowSpan="2"
           Aspect="AspectFill"
+                Margin="50,10,50,25"
           Source="{Binding Product.Image}"/>
             <controls:ParallaxControl
           x:Name="Parallax"
@@ -42,7 +78,7 @@
                     <pancakeview:PancakeView
               Grid.Row="1"
               CornerRadius="24, 24, 0, 0"
-              BackgroundColor="White"
+              BackgroundColor="{StaticResource WhiteColor}"
               Margin="0, 20, 0, 0">
                         <Grid>
                             <Grid.RowDefinitions>
@@ -56,7 +92,7 @@
                             <Label
                   Grid.Row="0"
                   Text="{Binding Product.Name}"
-                  Style="{StaticResource TitleStyle}"/>
+                  Style="{StaticResource ProductNameStyle}"/>
                             <!-- Quantity -->
                             <Grid
                   Grid.Row="1">
@@ -67,19 +103,19 @@
                                 
                                 <Label
                     Grid.Column="1"
-                    Text="{Binding Product.Price, StringFormat='{0:C0}'}"
-                    Style="{StaticResource TitleStyle}"/>
+                    Text="{Binding Product.Price, StringFormat='{0:N2} PLN'}"
+                    Style="{StaticResource ProductPriceStyle}"/>
                             </Grid>
                             <!-- About -->
                             <Label
                   Grid.Row="2"
-                  Text="O produkcie"
-                  Style="{StaticResource TitleStyle}"/>
+                  Text="O produkcie:"
+                  Style="{StaticResource ProductDescriptionTitleStyle}"/>
                             <!-- Description -->
                             <Label
                   Grid.Row="3"
                   Text="{Binding Product.Description}"
-                  Style="{StaticResource TitleStyle}"/>
+                  Style="{StaticResource ProductDescriptionStyle}"/>
                             <Grid
                   Grid.Row="4"
                   Margin="0, 12">
@@ -93,7 +129,7 @@
                     Grid.Column="1"
                     HeightRequest="48"
                     CornerRadius="24, 0, 24, 0"
-                    BackgroundColor="{StaticResource YellowColor}"
+                    BackgroundColor="{StaticResource NavyColor}"
                     Margin="24, 0, 0, 0">
                                     <Grid>
                                         <Grid.ColumnDefinitions>
@@ -103,12 +139,9 @@
                                         </Grid.ColumnDefinitions>
                                         <Label
                         Grid.Column="1"
-                        Text="Dodaj do koszyka"
-                        Style="{StaticResource TitleStyle}"/>
-                                        <Label
-                        Grid.Column="2"
-                        Text=">"
-                        Style="{StaticResource TitleStyle}"/>
+                        Text="Dodaj"
+                        Style="{StaticResource AddToCartStyle}"/>
+                                        
                                     </Grid>
                                 </pancakeview:PancakeView>
                             </Grid>
