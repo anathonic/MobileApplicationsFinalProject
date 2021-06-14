@@ -4,7 +4,7 @@
              xmlns:templates="clr-namespace:CDVShopApp.Views.Templates"
              xmlns:views="clr-namespace:CDVShopApp.Views"
              x:Class="CDVShopApp.Views.CDVShopView"
-             x:Name="CDVShopPage"
+             x:Name="RootPage"
             BackgroundColor="{StaticResource WhiteColor}">
     <ContentPage.Resources>
         <ResourceDictionary>
