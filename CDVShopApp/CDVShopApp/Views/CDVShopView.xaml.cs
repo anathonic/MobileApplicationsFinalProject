@@ -63,7 +63,7 @@ namespace CDVShopApp.Views
             var notification = new NotificationRequest
             {
                 BadgeNumber = 1,
-                Description = "Teraz będziesz otrzymywać powiadomienia o nowcyh produktach",
+                Description = "Teraz będziesz otrzymywać powiadomienia o nowych produktach",
                 Title = "Dziękujemy!",
                 ReturningData = "Dummy Data",
                 NotificationId = 1337,
