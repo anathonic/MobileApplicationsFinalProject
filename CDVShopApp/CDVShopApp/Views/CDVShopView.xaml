@@ -41,7 +41,8 @@
                         <Grid>
                             <Label Grid.Row="0" Text="Bądź z nami na bieżąco!" Margin="32,20,0,0" Style="{StaticResource TitleStyle}"/>
                             <!--notification button-->
-                            <Button Grid.Row="0" Margin="15,80,15,40" Text="Włącz powiadomienia" BorderRadius="35" BorderWidth="5"
+                            <Button 
+                                Grid.Row="0" Margin="15,80,15,40" Text="Włącz powiadomienia" Clicked="Button_Clicked" BorderRadius="35" BorderWidth="5"
                                     BorderColor="{StaticResource YellowColor}"
                             BackgroundColor="White"
                         Style="{StaticResource NotificationButtonStyle}"/>

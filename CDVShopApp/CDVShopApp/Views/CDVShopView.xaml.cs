@@ -1,5 +1,7 @@
-﻿using CDVShopApp.ViewModels;
+﻿using System;
+using CDVShopApp.ViewModels;
 using Xamarin.Forms;
+using Plugin.LocalNotification;
 
 namespace CDVShopApp.Views
 {
@@ -13,6 +15,15 @@ namespace CDVShopApp.Views
             InitializeComponent();
 
             BindingContext = new CDVShopViewModel();
+
+            NotificationCenter.Current.NotificationReceived +=
+                Current_NotificationReceived;
+        }
+
+        private void
+            Current_NotificationReceived(NotificationReceivedEventArgs e)
+        {
+            DisplayAlert(e.Title, e.Description, "OK");
         }
         protected override void OnAppearing()
         {
@@ -43,6 +54,24 @@ namespace CDVShopApp.Views
         private void OnCollapse()
         {
             CartView.TranslateTo(0, _pageHeight - CartView.PageHeader, CollapsedAnimationDuration, Easing.SinInOut);
+        }
+
+
+        void Button_Clicked(System.Object sender, System.EventArgs e)
+        {
+
+            var notification = new NotificationRequest
+            {
+                BadgeNumber = 1,
+                Description = "Teraz będziesz otrzymywać powiadomienia o nowcyh produktach",
+                Title = "Dziękujemy!",
+                ReturningData = "Dummy Data",
+                NotificationId = 1337,
+                NotifyTime = DateTime.Now.AddSeconds(5)
+            };
+
+            NotificationCenter.Current.Show(notification);
+
         }
     }
 }
