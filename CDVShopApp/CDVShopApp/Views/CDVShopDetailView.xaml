@@ -136,11 +136,12 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="30" />
                                             <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="Auto" />
+                                            <ColumnDefinition Width="*" />
                                         </Grid.ColumnDefinitions>
-                                        <Label
+                                        <Button
                         Grid.Column="1"
                         Text="Dodaj"
+                        BackgroundColor="{StaticResource NavyColor}"
                         Style="{StaticResource AddToCartStyle}"/>
 
                                     </Grid>
