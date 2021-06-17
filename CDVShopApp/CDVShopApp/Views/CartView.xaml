@@ -137,13 +137,27 @@
                     ItemTemplate="{StaticResource BasketItemTemplateSelector}"
                     HasUnevenRows="True"
                     SeparatorVisibility="None"
-                    SelectedItem="None"/>
+                    SelectedItem="None"
+                    
+                    />
+
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="0.5*"></RowDefinition>
+                        <RowDefinition Height="0.5*"></RowDefinition>
+                        <RowDefinition Height="auto"></RowDefinition>
+                    </Grid.RowDefinitions>
+                    <StackLayout Grid.Row="1" Margin="0,70,0,0">
+                        <Entry x:Name="entFirstName" Placeholder="Imie i Nazwisko" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black"/>
+                        <Entry x:Name="entAlbum" Placeholder="Nr Album" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black"/>
+                    </StackLayout>
+                </Grid>
                 <!-- TOTAL -->
                 <Grid
-                    Grid.Row="1">
+                    Grid.Row="1" Margin="0,40,0,0" >
                     <Grid.ColumnDefinitions>
-                        <ColumnDefinition />
-                        <ColumnDefinition />
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="auto"/>
                     </Grid.ColumnDefinitions>
                     <Label 
                         Grid.Column="0"
@@ -154,23 +168,29 @@
                         Text="{Binding Total, StringFormat='{0:N2} PLN'}"
                         Style="{StaticResource CartTitleStyle}"/>
                 </Grid>
+
                 <!-- BUY NOW BUTTON -->
                 <pancakeview:PancakeView
                     Grid.Row="2"
                     HeightRequest="48"
-                    CornerRadius="24, 0, 24, 0"
+                    CornerRadius="24, 24, 24, 24"
                     BackgroundColor="{StaticResource WhiteColor}"
-                    Margin="24, 0, 0, 0">
+                    Margin="24, 0, 24, 0">
                     <Grid>
                         <Grid.ColumnDefinitions>
                             <ColumnDefinition Width="60" />
                             <ColumnDefinition Width="*" />
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
-                        <Label 
+                        <Button
                             Grid.Column="1"
-                            Text="Zamów"
-                            Style="{StaticResource CartTitleStyle}"/>
+                            Text="Złóż zamówienie"
+                            BackgroundColor="White"
+                            TextColor="Black"
+                            FontAttributes="Bold"
+                            FontSize="20"
+                            Margin="0,0,50,0"
+                            />
                     </Grid>
                 </pancakeview:PancakeView>
             </Grid>
