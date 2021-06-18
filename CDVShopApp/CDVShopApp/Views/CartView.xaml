@@ -176,7 +176,6 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Button
-                            Command="{ Binding DeleteItemFromBasket}"
                             Grid.Column="1"
                             Text="Złóż zamówienie"
                             BackgroundColor="White"
