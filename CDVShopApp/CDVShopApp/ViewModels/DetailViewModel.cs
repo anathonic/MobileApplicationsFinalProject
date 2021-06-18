@@ -1,6 +1,8 @@
 ﻿using System.Threading.Tasks;
+using System.Windows.Input;
 using CDVShopApp.Models;
-
+using CDVShopApp.Services;
+using Xamarin.Forms;
 
 namespace CDVShopApp.ViewModels
 {
@@ -24,5 +26,16 @@ namespace CDVShopApp.ViewModels
 
             return base.InitializeAsync(navigationData);
         }
+        public ICommand AddToBasketCommand => new Command(() =>
+        {
+            BasketService.Instance.AddItemToBasket(new BasketItem
+            {
+                BasketItemType = BasketItemType.Product,
+                ProductImage = _product.Image,
+                ProductName = _product.Name,
+                UnitPrice = _product.Price
+
+            });
+        });
     }
 }

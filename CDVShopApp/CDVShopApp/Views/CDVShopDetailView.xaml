@@ -136,11 +136,12 @@
                                         <Grid.ColumnDefinitions>
                                             <ColumnDefinition Width="30" />
                                             <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="*" />
+                                            <ColumnDefinition Width="70" />
                                         </Grid.ColumnDefinitions>
                                         <Button
                         Grid.Column="1"
-                        Text="Dodaj"
+                        Text="Dodaj "
+                        Command="{ Binding AddToBasketCommand}"
                         BackgroundColor="{StaticResource NavyColor}"
                         Style="{StaticResource AddToCartStyle}"/>
 
