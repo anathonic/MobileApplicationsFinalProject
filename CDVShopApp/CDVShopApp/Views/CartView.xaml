@@ -141,12 +141,21 @@
                           Margin="0,0,20,0"
                     />
 
-
+                <Grid
+                    
+                    Grid.Row="1" Margin="0,0,0,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Entry Grid.Column="0" x:Name="entFirstName" Placeholder="Imie i Nazwisko" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black" Margin="0,100,0,0"/>
+                    <EntryGrid.Column="1" x:Name="entAlbum" Placeholder="Nr Album" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black"/>
+                </Grid>
 
                 <!-- TOTAL -->
                 <Grid
                     
-                    Grid.Row="1" Margin="0,0,0,0" >
+                    Grid.Row="2" Margin="0,0,0,0" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="auto"/>
@@ -163,29 +172,9 @@
                 </Grid>
 
                 <!-- BUY NOW BUTTON -->
-                <pancakeview:PancakeView
-                    Grid.Row="2"
-                    HeightRequest="48"
-                    CornerRadius="24, 24, 24, 24"
-                    BackgroundColor="{StaticResource WhiteColor}"
-                    Margin="24, 0, 24, 0">
-                    <Grid>
-                        <Grid.ColumnDefinitions>
-                            <ColumnDefinition Width="60" />
-                            <ColumnDefinition Width="*" />
-                            <ColumnDefinition Width="Auto" />
-                        </Grid.ColumnDefinitions>
-                        <Button
-                            Grid.Column="1"
-                            Text="Złóż zamówienie"
-                            BackgroundColor="White"
-                            TextColor="Black"
-                            FontAttributes="Bold"
-                            FontSize="20"
-                            Margin="0,0,50,0"
-                            />
-                    </Grid>
-                </pancakeview:PancakeView>
+
+                
+                
             </Grid>
         </Grid>
     </ContentView.Content>
