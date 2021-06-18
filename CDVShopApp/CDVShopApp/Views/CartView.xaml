@@ -127,7 +127,7 @@
                 Grid.Row="1"
             BackgroundColor="{StaticResource YellowColor}">
                 <Grid.RowDefinitions>
-                    <RowDefinition Height="300"/>
+                    <RowDefinition Height="200"/>
                     <RowDefinition Height="Auto"/>
                     <RowDefinition Height="Auto"/>
                 </Grid.RowDefinitions>
@@ -138,24 +138,15 @@
                     HasUnevenRows="True"
                     SeparatorVisibility="None"
                     SelectedItem="None"
+                          Margin="0,0,20,0"
                     />
 
 
 
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="0.5*"></RowDefinition>
-                        <RowDefinition Height="0.5*"></RowDefinition>
-                        <RowDefinition Height="auto"></RowDefinition>
-                    </Grid.RowDefinitions>
-                    <StackLayout Grid.Row="1" Margin="0,70,0,0">
-                        <Entry x:Name="entFirstName" Placeholder="Imie i Nazwisko" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black"/>
-                        <Entry x:Name="entAlbum" Placeholder="Nr Album" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black"/>
-                    </StackLayout>
-                </Grid>
                 <!-- TOTAL -->
                 <Grid
-                    Grid.Row="1" Margin="0,40,0,0" >
+                    
+                    Grid.Row="1" Margin="0,0,0,0" >
                     <Grid.ColumnDefinitions>
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="auto"/>
@@ -168,6 +159,7 @@
                         Grid.Column="1"
                         Text="{Binding Total, StringFormat='{0:N2} PLN'}"
                         Style="{StaticResource CartTitleStyle}"/>
+                    
                 </Grid>
 
                 <!-- BUY NOW BUTTON -->
@@ -184,6 +176,7 @@
                             <ColumnDefinition Width="Auto" />
                         </Grid.ColumnDefinitions>
                         <Button
+                            Command="{ Binding DeleteItemFromBasket}"
                             Grid.Column="1"
                             Text="Złóż zamówienie"
                             BackgroundColor="White"

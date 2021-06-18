@@ -50,6 +50,7 @@ namespace CDVShopApp.Views
         {
             var height = _pageHeight - CartView.PageHeader;
             CartView.TranslateTo(0, Height - height, ExpandAnimationDuration, Easing.SinInOut );
+            
         }
         private void OnCollapse()
         {

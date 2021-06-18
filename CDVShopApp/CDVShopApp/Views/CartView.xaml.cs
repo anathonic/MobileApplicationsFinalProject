@@ -1,5 +1,5 @@
 ﻿using Xamarin.Forms;
-
+using CDVShopApp.ViewModels;
 
 
 namespace CDVShopApp.Views
@@ -21,6 +21,7 @@ namespace CDVShopApp.Views
         private void OnExpandTapped(object sender, System.EventArgs e)
         {
             GoToState("Expanded");
+            BindingContext = new CDVShopViewModel();
             OnExpand?.Invoke();
         }
         private void OnCollapseTapped(object sender, System.EventArgs e)

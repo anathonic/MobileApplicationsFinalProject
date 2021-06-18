@@ -8,9 +8,7 @@ namespace CDVShopApp.Services
     {
         private List<BasketItem> items = new List<BasketItem>
             {
-                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Bluza CDV", ProductImage ="hoodie.jpg", Quantity = 1, UnitPrice = 80},
-                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Longsleeve CDV", ProductImage ="longsleeve.jpg", Quantity = 1, UnitPrice = 50},
-                new BasketItem { BasketItemType = BasketItemType.Product, ProductName ="Czapka CDV", ProductImage ="cap.jpg", Quantity = 1, UnitPrice = 30},
+               
             };
         
         private static BasketService _instance;
@@ -31,6 +29,10 @@ namespace CDVShopApp.Services
         public void AddItemToBasket(BasketItem item)
         {
             items.Add(item);
+        }
+        public void DeleteItemFromBasket(BasketItem item)
+        {
+            items.Remove(item);
         }
     }
 

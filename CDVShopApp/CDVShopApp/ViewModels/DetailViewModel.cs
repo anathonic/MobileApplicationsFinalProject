@@ -26,6 +26,18 @@ namespace CDVShopApp.ViewModels
 
             return base.InitializeAsync(navigationData);
         }
+        public ICommand DeleteItemFromBasketCommand => new Command(() =>
+        {
+            BasketService.Instance.DeleteItemFromBasket(new BasketItem
+            {
+                BasketItemType = BasketItemType.Product,
+                ProductImage = _product.Image,
+                ProductName = _product.Name,
+                UnitPrice = _product.Price,
+                Quantity = 1
+
+            });
+        });
         public ICommand AddToBasketCommand => new Command(() =>
         {
             BasketService.Instance.AddItemToBasket(new BasketItem
@@ -33,7 +45,8 @@ namespace CDVShopApp.ViewModels
                 BasketItemType = BasketItemType.Product,
                 ProductImage = _product.Image,
                 ProductName = _product.Name,
-                UnitPrice = _product.Price
+                UnitPrice = _product.Price,
+                Quantity = 1
 
             });
         });
