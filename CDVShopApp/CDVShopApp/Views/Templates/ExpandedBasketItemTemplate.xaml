@@ -63,7 +63,7 @@
                 Text="{Binding UnitPrice, StringFormat='{0:N2} PLN'}"
                 Style="{StaticResource ProductPriceStyle}"/>
 
-            <Button Command="{ Binding DeleteItemFromBasket}" Text="Usuń" Grid.Column="4" HorizontalOptions="End" Margin="0,20,5,0" WidthRequest="60" BackgroundColor="{StaticResource BlackColor}" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource WhiteColor}" CornerRadius="25"/>
+            <Button Command="{ Binding DeleteItemFromBasket}" Text="Usuń" Grid.Column="4" HorizontalOptions="End" Margin="0,15,5,15" WidthRequest="60" BackgroundColor="{StaticResource BlackColor}" FontSize="13" FontAttributes="Bold" TextColor="{StaticResource WhiteColor}" CornerRadius="25"/>
         </Grid>
   </ContentView.Content>
 </ContentView>

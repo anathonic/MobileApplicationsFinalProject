@@ -148,8 +148,8 @@
                         <ColumnDefinition Width="*"/>
                         <ColumnDefinition Width="*"/>
                     </Grid.ColumnDefinitions>
-                    <Entry Grid.Column="0" x:Name="entFirstName" Placeholder="Imie i Nazwisko" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black" Margin="0,100,0,0"/>
-                    <EntryGrid.Column="1" x:Name="entAlbum" Placeholder="Nr Album" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black"/>
+                    <Entry Grid.Column="0" x:Name="entFirstName" Placeholder="Imie i Nazwisko" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black" Margin="0,0,0,0"/>
+                    <Entry Grid.Column="1" x:Name="entAlbum" Placeholder="Nr Album" TextColor="Black" FontAttributes="Bold" PlaceholderColor="Black"/>
                 </Grid>
 
                 <!-- TOTAL -->
@@ -172,9 +172,17 @@
                 </Grid>
 
                 <!-- BUY NOW BUTTON -->
+                <Grid
+                    
+                    Grid.Row="3" Margin="0,20,0,0" >
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*"/>
+                    </Grid.ColumnDefinitions>
+                    <Button Text="Złóż zamówienie" VerticalOptions="StartAndExpand" CornerRadius="35" FontSize="20" FontAttributes="Bold" TextColor="{StaticResource BlackColor}"/>
 
-                
-                
+                </Grid>
+
+
             </Grid>
         </Grid>
     </ContentView.Content>

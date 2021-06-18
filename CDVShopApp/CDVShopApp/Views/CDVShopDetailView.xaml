@@ -141,6 +141,7 @@
                                         <Button
                         Grid.Column="1"
                         Text="Dodaj "
+                        CornerRadius="35"
                         Command="{ Binding AddToBasketCommand}"
                         BackgroundColor="{StaticResource NavyColor}"
                         Style="{StaticResource AddToCartStyle}"/>
