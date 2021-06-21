@@ -28,7 +28,15 @@ namespace CDVShopApp.ViewModels
         }
         public ICommand DeleteItemFromBasketCommand => new Command(() =>
         {
-            
+            BasketService.Instance.DeleteItem(new BasketItem
+            {
+                BasketItemType = BasketItemType.Product,
+                ProductImage = _product.Image,
+                ProductName = _product.Name,
+                UnitPrice = _product.Price,
+                Quantity = 1
+
+            });
         });
         public ICommand AddToBasketCommand => new Command(() =>
         {

@@ -117,38 +117,22 @@
                   Grid.Row="3"
                   Text="{Binding Product.Description}"
                   Style="{StaticResource ProductDescriptionStyle}"/>
-                            <Grid
-                  Grid.Row="4"
-                  Margin="0, 12">
-                                <Grid.ColumnDefinitions>
-                                    <ColumnDefinition Width="80"/>
-                                    <ColumnDefinition Width="*" />
-                                </Grid.ColumnDefinitions>
 
-                                <!-- add to cart button -->
-                                <pancakeview:PancakeView
-                    Grid.Column="1"
-                    HeightRequest="48"
-                    CornerRadius="24, 0, 24, 0"
-                    BackgroundColor="{StaticResource NavyColor}"
-                    Margin="24, 0, 0, 0">
-                                    <Grid>
-                                        <Grid.ColumnDefinitions>
-                                            <ColumnDefinition Width="30" />
-                                            <ColumnDefinition Width="*" />
-                                            <ColumnDefinition Width="70" />
-                                        </Grid.ColumnDefinitions>
-                                        <Button
-                        Grid.Column="1"
+                            <Button
+                        Grid.Row="4"
                         Text="Dodaj "
                         CornerRadius="35"
                         Command="{ Binding AddToBasketCommand}"
                         BackgroundColor="{StaticResource NavyColor}"
                         Style="{StaticResource AddToCartStyle}"/>
+                            <Button
+                        Grid.Row="5"
+                        Text="Usuń"
+                        CornerRadius="35"
+                        Command="{ Binding DeleteItemFromBasketCommand}"
+                        BackgroundColor="{StaticResource NavyColor}"
+                        Style="{StaticResource AddToCartStyle}"/>
 
-                                    </Grid>
-                                </pancakeview:PancakeView>
-                            </Grid>
                         </Grid>
                     </pancakeview:PancakeView>
                 </Grid>

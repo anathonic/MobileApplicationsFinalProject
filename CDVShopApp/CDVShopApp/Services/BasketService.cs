@@ -1,6 +1,6 @@
 ﻿using CDVShopApp.Models;
 using System.Collections.Generic;
-
+using System.Linq;
 
 namespace CDVShopApp.Services
 {
@@ -30,9 +30,11 @@ namespace CDVShopApp.Services
         {
             items.Add(item);
         }
-        public void DeleteItemFromBasket(BasketItem item)
+        public void DeleteItem(BasketItem item)
         {
-            items.Remove(item);
+            var toRemove = items.Where(w => w.ProductName == item.ProductName).FirstOrDefault();
+            if(toRemove != null)
+            items.Remove(toRemove);
         }
     }
 
