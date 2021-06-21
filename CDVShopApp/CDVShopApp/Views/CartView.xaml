@@ -138,7 +138,7 @@
                     HasUnevenRows="True"
                     SeparatorVisibility="None"
                     SelectedItem="None"
-                          Margin="0,0,20,0"
+                          Margin="0,0,0,0"
                     />
                 <Grid
                     
@@ -165,6 +165,7 @@
                         Style="{StaticResource CartTitleStyle}"/>
                     <Label 
                         Grid.Column="1"
+                        Margin="0,0,15,0"
                         Text="{Binding Total, StringFormat='{0:N2} PLN'}"
                         Style="{StaticResource CartTitleStyle}"/>
                     
