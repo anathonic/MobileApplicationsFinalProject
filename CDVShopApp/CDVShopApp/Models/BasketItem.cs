@@ -7,6 +7,7 @@ namespace CDVShopApp.Models
     }
     public class BasketItem
     {
+        public int Product_id { get; set; }
         public int Quantity { get; set; }
         public string ProductName { get; set; }
         public string ProductImage { get; set; }

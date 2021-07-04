@@ -27,6 +27,7 @@
         </ResourceDictionary>
     </ContentPage.Resources>
     <ContentPage.Content>
+
         <Grid>
             <!--main content-->
             <Grid>
@@ -35,6 +36,7 @@
                     <RowDefinition Height="*" />
                     <RowDefinition Height="70" />
                 </Grid.RowDefinitions>
+
                 <!--header-->
                 <Frame Padding="0" CornerRadius="20" IsClippedToBounds="True" Grid.Row="0" HasShadow="True" Margin="10,20,10,40">
                     <Grid BackgroundColor="{StaticResource YellowColor}" HeightRequest="130">
@@ -50,6 +52,7 @@
                     </Grid>
                 </Frame>
                 <!--header-->
+
                 <Label Grid.Row="0" Text="Produkty" Margin="15,200,0,0" Style="{StaticResource TitleStyle}"/>
                 <!--products-->
                 <CollectionView

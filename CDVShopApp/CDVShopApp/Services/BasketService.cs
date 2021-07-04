@@ -33,7 +33,7 @@ namespace CDVShopApp.Services
         public void DeleteItem(BasketItem item)
         {
             var toRemove = items.Where(w => w.ProductName == item.ProductName).FirstOrDefault();
-            if(toRemove != null)
+            if (toRemove != null)
             items.Remove(toRemove);
         }
     }

@@ -42,6 +42,7 @@ namespace CDVShopApp.ViewModels
         {
             BasketService.Instance.AddItemToBasket(new BasketItem
             {
+                Product_id = _product.Id,
                 BasketItemType = BasketItemType.Product,
                 ProductImage = _product.Image,
                 ProductName = _product.Name,

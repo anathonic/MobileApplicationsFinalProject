@@ -74,5 +74,9 @@ namespace CDVShopApp.Views
             NotificationCenter.Current.Show(notification);
 
         }
+        private void Tap_Test(object sender, EventArgs e)
+        {
+            Navigation.PushAsync(new ConnectionTest());
+        }
     }
 }

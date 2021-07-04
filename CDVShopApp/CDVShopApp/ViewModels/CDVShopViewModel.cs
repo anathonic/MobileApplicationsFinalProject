@@ -1,4 +1,5 @@
-﻿using CDVShopApp.Models;
+﻿using CDVShopApp.api;
+using CDVShopApp.Models;
 using CDVShopApp.Services;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -17,6 +18,8 @@ namespace CDVShopApp.ViewModels
         public CDVShopViewModel()
         {
             LoadData();
+            _products = new ObservableCollection<Product>();
+            FindItems();
         }
 
 
@@ -60,11 +63,20 @@ namespace CDVShopApp.ViewModels
                 OnPropertyChanged();
             }
         }
-
+        private async void FindItems()
+        {
+            ApiService apiservices = new ApiService();
+            var items = await apiservices.Gimme();
+            foreach (var item in items.ToList())
+            {
+                Products.Add(item);
+            }
+        }
         public ICommand SelectCommand => new Command(NavigateToCDVShopDetail);
         private void LoadData()
         {
-            Products = new ObservableCollection<Product>(ServiceDummy.Instance.GetProducts());
+            _products = new ObservableCollection<Product>();
+            FindItems();
             var actualBasket = BasketService.Instance.GetActualBasket();
             Basket = new ObservableCollection<BasketItem>(actualBasket);
             Total = actualBasket.Sum(b => b.UnitPrice * b.Quantity);

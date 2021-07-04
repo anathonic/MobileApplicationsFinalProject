@@ -19,11 +19,11 @@
                 <Setter Property="Margin" Value="0,0"/>
             </Style>
             <Style x:Key="ProductNameStyle" TargetType="Label">
-            <Setter Property="VerticalOptions" Value="Center" />
-            <Setter Property="FontSize" Value="15"/>
-            <Setter Property="FontAttributes" Value="Bold"/>
-            <Setter Property="TextColor" Value="Black"/>
-            <Setter Property="Margin" Value="0,0,0,0"/>
+                <Setter Property="VerticalOptions" Value="Center" />
+                <Setter Property="FontSize" Value="15"/>
+                <Setter Property="FontAttributes" Value="Bold"/>
+                <Setter Property="TextColor" Value="Black"/>
+                <Setter Property="Margin" Value="0,0,0,0"/>
             </Style>
             <Style x:Key="ProductPriceStyle" TargetType="Label">
                 <Setter Property="HorizontalTextAlignment" Value="End"/>
@@ -35,8 +35,8 @@
 
         </ResourceDictionary>
     </ContentView.Resources>
-        <ContentView.Content>
-            <Grid>
+    <ContentView.Content>
+        <Grid>
             <Grid.ColumnDefinitions>
                 <ColumnDefinition Width="Auto"/>
                 <ColumnDefinition Width="Auto"/>
@@ -63,7 +63,7 @@
                 Text="{Binding UnitPrice, StringFormat='{0:N2} PLN'}"
                 Style="{StaticResource ProductPriceStyle}"/>
 
-           
+
         </Grid>
-  </ContentView.Content>
+    </ContentView.Content>
 </ContentView>

@@ -1,5 +1,6 @@
 ﻿using Foundation;
 using UIKit;
+using Xamarin.Forms;
 
 namespace CDVShopApp.iOS
 {
