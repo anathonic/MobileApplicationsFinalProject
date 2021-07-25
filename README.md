@@ -2,7 +2,7 @@
 
 ## Collegium Da Vinci Mobile Shop Application ##
 
-CDV Shop Application with Azure App Service 
+CDV Shop Application with Azure Database and Web API
 
 ### Platforms: ###
 ***
